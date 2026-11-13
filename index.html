@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Páramo Tech | Software a la medida desde Bogotá, Colombia</title>
+<meta name="description" content="Páramo Tech desarrolla software, aplicaciones web y soluciones en la nube para empresas colombianas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#10352d;      /* bosque de niebla */
+  --verde-2:#1c5a4b;
+  --niebla:#e4ede8;
+  --hielo:#f7faf8;
+  --oro:#e6b12e;        /* frailejón */
+  --tinta:#13201c;
+  --gris:#52625c;
+  --display:"Bricolage Grotesque","Trebuchet MS",Arial,sans-serif;
+  --texto:"Instrument Sans","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--texto);color:var(--tinta);background:var(--hielo);line-height:1.6;font-size:1.0625rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--oro);outline-offset:3px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+
+/* Navegación */
+header{background:var(--verde);color:var(--hielo)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 0;flex-wrap:wrap}
+.marca{font-family:var(--display);font-weight:800;font-size:1.35rem;text-decoration:none;letter-spacing:-.01em}
+.marca span{color:var(--oro)}
+nav ul{display:flex;gap:1.6rem;list-style:none;flex-wrap:wrap}
+nav ul a{text-decoration:none;font-weight:500;opacity:.88}
+nav ul a:hover{opacity:1;text-decoration:underline;text-underline-offset:5px}
+
+/* Hero */
+.hero{background:var(--verde);color:var(--hielo);position:relative;overflow:hidden;padding:4.5rem 0 11rem}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,6.5vw,4.6rem);line-height:1.04;letter-spacing:-.025em;max-width:15ch}
+.hero p{max-width:52ch;margin-top:1.4rem;font-size:1.2rem;color:#cfe0d8}
+.acciones{display:flex;gap:.9rem;margin-top:2rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--oro)}
+.btn-oro{background:var(--oro);color:var(--tinta)}
+.btn-oro:hover{background:#f0c24d}
+.btn-borde{color:var(--hielo)}
+.btn-borde:hover{background:rgba(230,177,46,.15)}
+.montanas{position:absolute;left:0;bottom:-1px;width:100%;height:auto;display:block}
+
+/* Secciones */
+section{padding:4.5rem 0}
+h2{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:.8rem;max-width:20ch}
+.intro{color:var(--gris);max-width:58ch;margin-bottom:2.5rem}
+
+/* Servicios: lista con borde lateral, no tarjetas idénticas */
+.servicios{display:grid;gap:2rem 3rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.servicio{border-left:4px solid var(--oro);padding-left:1.2rem}
+.servicio h3{font-family:var(--display);font-size:1.3rem;margin-bottom:.4rem}
+.servicio p{color:var(--gris)}
+
+/* Casos */
+.casos{background:var(--niebla)}
+.caso{display:grid;grid-template-columns:minmax(150px,1fr) 3fr;gap:1rem 2.5rem;padding:1.6rem 0;border-top:1px solid #b9cdc3}
+.caso:last-child{border-bottom:1px solid #b9cdc3}
+.caso b{font-family:var(--display);font-size:1.15rem}
+.caso small{display:block;color:var(--gris);font-size:.95rem;margin-top:.2rem}
+@media(max-width:620px){.caso{grid-template-columns:1fr}}
+
+/* Equipo */
+.sobre{display:grid;gap:3rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start}
+.sobre p+p{margin-top:1rem}
+.sedes{background:var(--verde);color:var(--hielo);padding:1.8rem;border-radius:10px}
+.sedes h3{font-family:var(--display);margin-bottom:.8rem}
+.sedes li{list-style:none;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.15)}
+.sedes li:last-child{border:0}
+.sedes span{color:#b9d3c8}
+
+/* Contacto */
+.contacto{background:var(--verde);color:var(--hielo)}
+.contacto h2{max-width:none}
+.contacto .intro{color:#cfe0d8}
+.campos{display:grid;gap:1rem;max-width:560px}
+label{font-weight:600;display:block;margin-bottom:.3rem}
+input,textarea{width:100%;padding:.8rem 1rem;border-radius:6px;border:2px solid transparent;font:inherit;background:var(--hielo);color:var(--tinta)}
+input:focus,textarea:focus{border-color:var(--oro);outline:none}
+textarea{min-height:120px;resize:vertical}
+button.btn{cursor:pointer;font:inherit;font-weight:600;justify-self:start}
+#respuesta{min-height:1.5rem;color:var(--oro);font-weight:600}
+
+footer{background:var(--tinta);color:#a9bab3;padding:1.6rem 0;font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Principal">
+      <a class="marca" href="#inicio">Páramo<span>Tech</span></a>
+      <ul>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#casos">Proyectos</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <div class="wrap">
+      <h1>Tecnología hecha en Colombia para empresas que quieren crecer</h1>
+      <p>Diseñamos y desarrollamos software a la medida, aplicaciones web y soluciones en la nube desde Bogotá, con equipos que hablan tu idioma y conocen tu mercado.</p>
+      <div class="acciones">
+        <a class="btn btn-oro" href="#contacto">Solicitar una reunión</a>
+        <a class="btn btn-borde" href="#casos">Ver proyectos</a>
+      </div>
+    </div>
+    <svg class="montanas" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 220V150L180 70l150 80 190-110 210 120 170-90 220 100 150-60 170 60v100z" fill="#1c5a4b"/>
+      <path d="M0 220V185l220-70 200 70 230-90 220 80 190-60 180 70v35z" fill="#e4ede8"/>
+    </svg>
+  </div>
+
+  <section id="servicios" style="background:var(--niebla);padding-top:2rem">
+    <div class="wrap">
+      <h2>Lo que construimos</h2>
+      <p class="intro">Acompañamos el proyecto desde la idea hasta que está funcionando y con usuarios reales.</p>
+      <div class="servicios">
+        <article class="servicio">
+          <h3>Software a la medida</h3>
+          <p>Sistemas de inventario, facturación, citas y gestión interna adaptados a cómo trabaja tu negocio.</p>
+        </article>
+        <article class="servicio">
+          <h3>Aplicaciones web y móviles</h3>
+          <p>Sitios y apps rápidos, que funcionan bien incluso con conexiones lentas y en cualquier celular.</p>
+        </article>
+        <article class="servicio">
+          <h3>Nube y automatización</h3>
+          <p>Migramos tus datos a la nube, automatizamos procesos repetitivos y dejamos todo respaldado.</p>
+        </article>
+        <article class="servicio">
+          <h3>Pagos y facturación electrónica</h3>
+          <p>Integración con pasarelas de pago locales y con la facturación electrónica exigida por la DIAN.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="casos" id="casos" style="background:var(--hielo)">
+    <div class="wrap">
+      <h2>Proyectos recientes</h2>
+      <p class="intro">Algunos ejemplos del tipo de trabajo que hacemos con empresas de distintos sectores.</p>
+      <div class="caso">
+        <div><b>Red de droguerías</b><small>Salud · Cali</small></div>
+        <p>Plataforma de inventario en tiempo real para 14 sedes, con alertas de productos próximos a vencer.</p>
+      </div>
+      <div class="caso">
+        <div><b>Cooperativa cafetera</b><small>Agro · Huila</small></div>
+        <p>App móvil para registrar cosechas y pagos a caficultores, con modo sin internet y sincronización automática.</p>
+      </div>
+      <div class="caso">
+        <div><b>Cadena de barberías</b><small>Servicios · Medellín</small></div>
+        <p>Sistema de agenda y recordatorios por WhatsApp que redujo las citas perdidas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros" style="background:var(--niebla)">
+    <div class="wrap sobre">
+      <div>
+        <h2>Un equipo colombiano, cerca de ti</h2>
+        <p>Páramo Tech nació en Bogotá en 2016 con una idea sencilla: las empresas del país merecen software tan bueno como el de cualquier multinacional, pero pensado para su realidad.</p>
+        <p>Trabajamos con metodologías ágiles, entregas cada dos semanas y código documentado en repositorios que son tuyos desde el primer día.</p>
+      </div>
+      <aside class="sedes">
+        <h3>Dónde estamos</h3>
+        <ul>
+          <li>Bogotá <span>sede principal, Chapinero</span></li>
+          <li>Medellín <span>equipo de producto</span></li>
+          <li>Bucaramanga <span>soporte y datos</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="wrap">
+      <h2>Cuéntanos qué necesitas</h2>
+      <p class="intro">Escríbenos y te respondemos en máximo un día hábil.</p>
+      <div class="campos" role="group" aria-label="Formulario de contacto">
+        <div><label for="nombre">Nombre</label><input id="nombre" type="text" autocomplete="name"></div>
+        <div><label for="correo">Correo electrónico</label><input id="correo" type="email" autocomplete="email"></div>
+        <div><label for="mensaje">¿Qué quieres construir?</label><textarea id="mensaje"></textarea></div>
+        <button class="btn btn-oro" type="button" onclick="enviar()">Enviar mensaje</button>
+        <p id="respuesta" role="status"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Páramo Tech S.A.S. Bogotá, Colombia.</span>
+    <span>hola@paramotech.example</span>
+  </div>
+</footer>
+
+<script>
+function enviar(){
+  var nombre = document.getElementById("nombre").value.trim();
+  var correo = document.getElementById("correo").value.trim();
+  var mensaje = document.getElementById("mensaje").value.trim();
+  var salida = document.getElementById("respuesta");
+  if(!nombre || !correo || !mensaje){
+    salida.textContent = "Completa tu nombre, correo y mensaje para poder enviarlo.";
+    return;
+  }
+  salida.textContent = "Mensaje enviado. Gracias, " + nombre + ", te escribimos pronto.";
+}
+</script>
+</body>
+</html>
