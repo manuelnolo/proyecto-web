@@ -90,6 +90,8 @@ button.btn{cursor:pointer;font:inherit;font-weight:600;justify-self:start}
 
 footer{background:var(--tinta);color:#a9bab3;padding:1.6rem 0;font-size:.95rem}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
+footer .autor{flex-basis:100%;border-top:1px solid rgba(255,255,255,.15);padding-top:.9rem;margin-top:.3rem;color:#d3e0da}
+footer .autor a{color:var(--oro)}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -191,7 +193,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem
   <section class="contacto" id="contacto">
     <div class="wrap">
       <h2>Cuéntanos qué necesitas</h2>
-      <p class="intro">Escríbenos y te respondemos en máximo un día hábil.</p>
+      <p class="intro">Escríbenos y te respondemos en máximo un día hábil, o directamente a <a href="mailto:ingenieromanuelmol@gmail.com">ingenieromanuelmol@gmail.com</a>.</p>
       <div class="campos" role="group" aria-label="Formulario de contacto">
         <div><label for="nombre">Nombre</label><input id="nombre" type="text" autocomplete="name"></div>
         <div><label for="correo">Correo electrónico</label><input id="correo" type="email" autocomplete="email"></div>
@@ -206,7 +208,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem
 <footer>
   <div class="wrap">
     <span>© 2026 Páramo Tech S.A.S. Bogotá, Colombia.</span>
-    <span>hola@paramotech.example</span>
+    <span>Correo: <a href="mailto:ingenieromanuelmol@gmail.com">ingenieromanuelmol@gmail.com</a></span>
+    <p class="autor">Página desarrollada por <strong>Manuel Alejandro Molina Castillo</strong>, aprendiz del SENA.</p>
   </div>
 </footer>
 
